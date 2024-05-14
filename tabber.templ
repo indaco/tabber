@@ -1,0 +1,23 @@
+package tabber
+
+import "fmt"
+
+templ Root(id string) {
+	<div
+		id={ toSlug(fmt.Sprintf("tabber-container-%s", id)) }
+		class="gtb_tabber_container"
+		data-placement={ getPlacementAsStringFromContextById(ctx, id) }
+		data-variant={ getFirstVariantAsStringFromContextById(ctx, id) }
+		data-alignment={ getAlignmentAsStringFromContextById(ctx, id) }
+	>
+		{ children... }
+	</div>
+}
+
+css gtb_tabs(direction string) {
+	position: relative;
+	width: var(--gtb-root-width);
+	max-width: var(--gtb-root-max-width);
+	display: flex;
+	flex-direction: { direction };
+}

@@ -1,0 +1,152 @@
+package main
+
+import "github.com/indaco/tabber"
+
+templ DemoSelectorsCSS() {
+	<style>
+    .toolbar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .demo-select {
+      min-width: 200px;
+      position: relative;
+    }
+
+    .demo-select label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+      color: #123;
+      font-weight: bold;
+      padding: 0.5rem;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.675em 6em 0.675em 1em;
+      background-color: #fff;
+      border: 1px solid #caced1;
+      border-radius: 0.25rem;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .demo-select::before,
+    .demo-select::after {
+      --size: 0.3rem;
+      content: '';
+      position: absolute;
+      right: 1rem;
+      pointer-events: none;
+    }
+
+    .demo-select::before {
+      border-left: var(--size) solid transparent;
+      border-right: var(--size) solid transparent;
+      border-bottom: var(--size) solid black;
+      top: 65%;
+    }
+
+    .demo-select::after {
+      border-left: var(--size) solid transparent;
+      border-right: var(--size) solid transparent;
+      border-top: var(--size) solid black;
+      top: 80%;
+    }
+
+    @media screen and (min-width: 620px) {
+      .toolbar {
+          flex-direction: row;
+      }
+    }
+  </style>
+}
+
+templ DemoSelectors(ctx context.Context) {
+	@DemoSelectorsCSS()
+	<div class="toolbar">
+		@variantSelect(ctx)
+		@placementSelect(ctx)
+		@alignmentSelect(ctx)
+	</div>
+}
+
+/* Variant Select */
+
+templ variantSelect(ctx context.Context) {
+	<div class="demo-select">
+		<label for="variantSelect">Select a variant</label>
+		for key, config := range tabber.GetConfigMapFromContext(ctx).Data {
+			<select id="variantSelect" onchange={ setVariantValue(key) }>
+				for _, variant := range config.Variants {
+					<option value={ variant.String() }>{ toTitle(variant.String()) }</option>
+				}
+				<option value="headless">Headless</option>
+			</select>
+		}
+	</div>
+}
+
+script setVariantValue(id string) {
+    var selectedValue = document.getElementById('variantSelect').value;
+
+    tabberContainer = document.getElementById(`tabber-container-${id}`)
+    if(tabberContainer != null) {
+        tabberContainer.setAttribute('data-variant', selectedValue)
+    }
+}
+
+/* Placement Select */
+
+templ placementSelect(ctx context.Context) {
+	<div class="demo-select">
+		<label for="placementSelect">Placement for the tabs list</label>
+		for key, _ := range tabber.GetConfigMapFromContext(ctx).Data {
+			<select id="placementSelect" onchange={ setPlacementValue(key) }>
+				for _, p := range []tabber.Placement{tabber.Top, tabber.Bottom, tabber.Left, tabber.Right} {
+					<option value={ p.String() }>{ toTitle(p.String()) }</option>
+				}
+			</select>
+		}
+	</div>
+}
+
+script setPlacementValue(id string) {
+    var selectedValue = document.getElementById('placementSelect').value
+
+    tabberContainer = document.getElementById(`tabber-container-${id}`)
+    if(tabberContainer != null) {
+        tabberContainer.setAttribute('data-placement', selectedValue)
+    }
+}
+
+/* Alignment Select */
+
+templ alignmentSelect(ctx context.Context) {
+	<div class="demo-select">
+		<label for="alignmentSelect">Alignment for the tabs list</label>
+		for key, _ := range tabber.GetConfigMapFromContext(ctx).Data {
+			<select id="alignmentSelect" onchange={ setAlignmentValue(key) }>
+				for _, a := range []tabber.Alignment{tabber.Start, tabber.Center, tabber.End} {
+					<option value={ a.String() }>{ toTitle(a.String()) }</option>
+				}
+			</select>
+		}
+	</div>
+}
+
+script setAlignmentValue(id string) {
+    var selectedValue = document.getElementById('alignmentSelect').value
+
+    tabberContainer = document.getElementById(`tabber-container-${id}`)
+    if(tabberContainer != null) {
+        tabberContainer.setAttribute('data-alignment', selectedValue)
+    }
+}

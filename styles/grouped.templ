@@ -1,0 +1,147 @@
+package styles
+
+// Variant Name: Grouped
+templ TabberGroupedCss() {
+	<style>
+    [data-variant="grouped"] .gtb_tab_list {
+      position: relative;
+      justify-content: center;
+      isolation: isolate;
+
+      button {
+        transition: background-color 0.3s ease;
+      }
+
+      button:focus,
+      button:focus-visible {
+        --gtb-tab-ring-width: 1px;
+        z-index: 1;
+      }
+
+      button:is(.active, [aria-selected="true"]) {
+        --gtb-tab-bg: var(--gtb-tab-bg-active);
+      }
+
+      button:is(.active, [aria-selected="true"])active:focus,
+      button:is(.active, [aria-selected="true"]):focus-visible {
+        --gtb-tab-bg-focus: var(--gtb-base-light);
+        --gtb-tab-ring-width: 1px;
+        z-index: 1;
+      }
+
+      @media screen and (width > 320px) {
+        & {
+          grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+          --gtb-tab-list-gap: 0;
+
+          button:first-of-type {
+            --gtb-tab-border-tl-radius: 100vh;
+            --gtb-tab-border-tr-radius: 0;
+            --gtb-tab-border-bl-radius: 100vh;
+            --gtb-tab-border-br-radius: 0;
+          }
+
+          button:last-of-type {
+            --gtb-tab-border-tl-radius: 0;
+            --gtb-tab-border-tr-radius: 100vh;
+            --gtb-tab-border-bl-radius: 0;
+            --gtb-tab-border-br-radius: 100vh;
+          }
+        }
+      }
+
+      /* Media Queries */
+      @media screen and (width > 640px) {
+        [data-placement="left"] &,
+        [data-placement="right"] & {
+          grid-template-columns: auto;
+          align-content: space-around;
+          transform-origin: center center;
+          margin-bottom: 0;
+          padding: 0;
+          padding-block: 3em;
+          writing-mode: horizontal-tb;
+        }
+
+        [data-placement="left"] & {
+          button {
+            justify-content: center;
+            transform: rotate(-90deg);
+          }
+
+          button:first-of-type {
+            --gtb-tab-border-tl-radius: 0;
+            --gtb-tab-border-tr-radius: 100vh;
+            --gtb-tab-border-bl-radius: 0;
+            --gtb-tab-border-br-radius: 100vh;
+          }
+
+          button:last-of-type {
+            --gtb-tab-border-tl-radius: 100vh;
+            --gtb-tab-border-tr-radius: 0;
+            --gtb-tab-border-bl-radius: 100vh;
+            --gtb-tab-border-br-radius: 0;
+          }
+        }
+
+        [data-placement="right"] & {
+          button {
+            justify-content: center;
+            transform: rotate(90deg);
+          }
+
+          button:first-of-type {
+            --gtb-tab-border-tl-radius: 100vh;
+            --gtb-tab-border-tr-radius: 0;
+            --gtb-tab-border-bl-radius: 100vh;
+            --gtb-tab-border-br-radius: 0;
+          }
+
+          button:last-of-type {
+            --gtb-tab-border-tl-radius: 0;
+            --gtb-tab-border-tr-radius: 100vh;
+            --gtb-tab-border-bl-radius: 0;
+            --gtb-tab-border-br-radius: 100vh;
+          }
+        }
+      }
+
+      @media screen and (width > 720px) {
+        [data-placement="left"] &,
+        [data-placement="right"] & {
+          padding-block: 1em;
+        }
+      }
+
+      @media screen and (width > 1280px) {
+        [data-placement="left"] &,
+        [data-placement="right"] & {
+          padding-block: 2.5em;
+        }
+      }
+    }
+
+    /* Media Feature - prefers-color-scheme */
+    @media (prefers-color-scheme: light) {
+      :root {
+        [data-variant="grouped"] {
+          --gtb-tab-bg: var(--gtb-base-lightest);
+          --gtb-tab-bg-hover: var(--gtb-base-lighter);
+          --gtb-tab-bg-focus: var(--gtb-base-light);
+          --gtb-tab-bg-active: var(--gtb-base-light);
+        }
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        [data-variant="grouped"] {
+          --gtb-tab-bg: var(--gtb-base-darker);
+          --gtb-tab-bg-hover: var(--gtb-base);
+          --gtb-tab-bg-focus: var(--gtb-base-dark);
+          --gtb-tab-bg-active: var(--gtb-base-dark);
+        }
+      }
+    }
+  </style>
+}

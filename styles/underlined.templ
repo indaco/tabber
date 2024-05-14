@@ -1,0 +1,94 @@
+package styles
+
+// Variant Name: Underlined
+templ TabberUnderlinedCss() {
+	<style>
+    [data-variant='underlined'] .gtb_tab_list {
+      --gtb-tab-list-gap: 0;
+
+      button {
+        opacity: 0.8;
+      }
+
+      button:hover {
+        opacity: 1;
+      }
+
+      button:is(.active, [aria-selected='true']) {
+        --gtb-tab-border-b-width: 3px;
+        opacity: 1;
+      }
+
+      button:is(.active, [aria-selected='true']):focus,
+      button:is(.active, [aria-selected='true']):focus-visible {
+        --gtb-tab-bg: transparent;
+      }
+
+      /* Media Queries */
+      @media screen and (width >= 480px) {
+        --gtb-tab-list-border-b-width: 1px;
+
+        button.active {
+          --gtb-tab-border-b-width: 0px;
+        }
+
+        [data-placement='bottom'] & {
+          --gtb-tab-list-border-t-width: 1px;
+          --gtb-tab-list-border-b-width: 0;
+        }
+
+        [data-placement='left'] & {
+          --gtb-tab-list-border-r-width: 1px;
+          --gtb-tab-list-border-b-width: 0;
+
+          padding-block: 2rem;
+
+          button:is(.active, [aria-selected='true']) {
+            --gtb-tab-border-b-width: 0;
+            --gtb-tab-border-r-width: 3px;
+
+            margin-right: -0.02em;
+            margin-bottom: 0;
+          }
+        }
+
+        [data-placement='right'] & {
+          --gtb-tab-list-border-l-width: 1px;
+          --gtb-tab-list-border-b-width: 0;
+
+          padding-block: 2rem;
+
+          button:is(.active, [aria-selected='true']) {
+            --gtb-tab-border-b-width: 0;
+            --gtb-tab-border-l-width: 3px;
+            margin-bottom: 0;
+
+            margin-left: -0.02em;
+          }
+        }
+
+        [data-placement='top'] &::after,
+        [data-placement='bottom'] &::after {
+          position: absolute;
+          right: 0;
+          left: 0;
+          transform-origin: left;
+          translate: var(--_left, 0) 0;
+          transition: translate 300ms cubic-bezier(0.88, -0.35, 0.565, 1.35);
+          background-color: var(--gtb-base-light);
+          width: var(--_width, 0);
+          height: 3px;
+          content: '';
+        }
+
+        [data-placement='top'] &::after {
+          bottom: 0;
+        }
+
+        [data-placement='bottom'] &::after {
+          top: 0;
+        }
+      }
+    }
+  </style>
+}

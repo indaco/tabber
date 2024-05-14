@@ -1,0 +1,148 @@
+package main
+
+import "github.com/indaco/tabber"
+
+templ HomePage() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>tabber - custom variant</title>
+			<!-- inject component styles -->
+			@tabber.TabberCSS(ctx)
+			<!-- styles -->
+			<style type="text/css">
+				.centered {
+					width: fit-content;
+					height: fit-content;
+					margin: auto;
+				}
+
+				p {
+					line-height: 1.25;
+				}
+
+				:root {
+					/* Color */
+					--gtb-base: rgb(245, 158, 11);
+					/* TabList */
+					--gtb-tab-list-my: 0.5rem;
+					/* Tab */
+					--gtb-tab-color: var(--gtb-base-dark);
+					--gtb-tab-color-hover: var(--gtb-base-darker);
+					--gtb-tab-color-active: var(--gtb-base-darkest);
+					--gtb-tab-bg: var(--gtb-base-light);
+					--gtb-tab-bg-hover: var(--gtb-base-lighter);
+					--gtb-tab-bg-active: var(--gtb-base);
+					--gtb-tab-border-tl-radius: 0.5rem;
+					--gtb-tab-border-tr-radius: 1rem;
+					--gtb-tab-border-bl-radius: 1rem;
+					--gtb-tab-border-br-radius: 0.5rem;
+					--gtb-tab-ring-width: 2px;
+					--gtb-tab-ring-color: var(--gtb-base-60);
+					--gtb-tab-ring-offset: 0.125rem;
+					/* TabPanel */
+					--gtb-panel-px: 3.5rem;
+					--gtb-panel-color: var(--gtb-base-dark);
+					--gtb-panel-bg: var(--gtb-base-20);
+					--gtb-panel-border-t-width: 1px;
+					--gtb-panel-border-t-color: var(--gtb-base);
+					--gtb-panel-border-r-width: 1px;
+					--gtb-panel-border-r-color: var(--gtb-base);
+					--gtb-panel-border-b-width: 1px;
+					--gtb-panel-border-b-color: var(--gtb-base);
+					--gtb-panel-border-l-width: 1px;
+					--gtb-panel-border-l-color: var(--gtb-base);
+					--gtb-panel-border-tl-radius: 2rem;
+					--gtb-panel-border-tr-radius: 0.5rem;
+					--gtb-panel-border-bl-radius: 0.5rem;
+					--gtb-panel-border-br-radius: 2rem;
+				}
+			</style>
+		</head>
+		<body>
+			<div class="centered">
+				<!-- create and render the tab component -->
+				@tabber.Root("custom-variant") {
+					@tabber.TabList() {
+						@tabber.Tab(1, "First")
+						@tabber.Tab(2, "Second")
+						@tabber.Tab(3, "Third")
+					}
+					@tabber.TabPanel(1) {
+						<h3>1 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+					@tabber.TabPanel(2) {
+						<h3>2 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+					@tabber.TabPanel(3) {
+						<h3>3 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+				}
+			</div>
+			<!-- inject component javascript -->
+			@tabber.TabberJS(tabber.GetConfigMapFromContext(ctx))
+		</body>
+	</html>
+}

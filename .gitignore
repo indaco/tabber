@@ -1,0 +1,33 @@
+# Go
+go.work
+*.exe
+*.so
+*.test
+*.out
+
+# GoLand #
+.idea
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# VisualStudioCode
+.vscode/*
+.history/
+
+# DevBox
+.devbox/
+
+# NodeJs
+node_modules
+
+statics/css
+
+#
+*.log
+tmp
+*_templ.txt
+_examples/**/*_templ.go

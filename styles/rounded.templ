@@ -1,0 +1,411 @@
+package styles
+
+// Variant Name: Rounded
+templ TabberRoundedCss() {
+	<style>
+    :root {
+      [data-variant="rounded"] {
+        --gtb-panel-border-t-width: 1px;
+        --gtb-panel-border-r-width: 1px;
+        --gtb-panel-border-b-width: 1px;
+        --gtb-panel-border-l-width: 1px;
+      }
+    }
+
+    [data-variant="rounded"] {
+      /* Tab List */
+      .gtb_tab_list {
+        [data-placement="top"] & {
+          margin-bottom: 0.75em;
+        }
+
+        [data-placement="bottom"] & {
+          margin-top: 0.75em;
+        }
+
+        [data-placement="left"] &,
+        [data-placement="right"] & {
+          --gtb-tab-list-gap: 0.5rem;
+          margin-bottom: 0.75em;
+        }
+
+        button {
+          --gtb-tab-border-t-width: 1px;
+          --gtb-tab-border-r-width: 1px;
+          --gtb-tab-border-b-width: 1px;
+          --gtb-tab-border-l-width: 1px;
+
+          --gtb-tab-border-tl-radius: 0.75rem;
+          --gtb-tab-border-tr-radius: 0.75rem;
+          --gtb-tab-border-br-radius: 0.75rem;
+          --gtb-tab-border-bl-radius: 0.75rem;
+
+          transition: none;
+        }
+
+        /* Media Queries */
+        @media screen and (width > 640px) {
+          button:is(.active, [aria-selected="true"]) {
+            --gtb-tab-bg: var(--_body-bg);
+          }
+
+          button:is(.active, [aria-selected="true"]):focus,
+          button:is(.active, [aria-selected="true"]):focus-visible {
+            --gtb-tab-bg: var(--_body-bg);
+          }
+
+          button:is(.active, [aria-selected="true"])::before,
+          button:is(.active, [aria-selected="true"])::after {
+            --border-radius: 0.5rem;
+            position: absolute;
+            background-color: var(--gtb-nav-bg);
+            width: var(--border-radius);
+            height: var(--border-radius);
+            content: "";
+          }
+
+          [data-placement="top"] & {
+            margin-bottom: 0;
+
+            button {
+              --gtb-tab-border-t-width: 0;
+              --gtb-tab-border-r-width: 0;
+              --gtb-tab-border-b-width: 0;
+              --gtb-tab-border-l-width: 0;
+              --gtb-tab-border-br-radius: 0;
+              --gtb-tab-border-bl-radius: 0;
+            }
+
+            button:is(.active, [aria-selected="true"]) {
+              --gtb-tab-border-t-width: 1px;
+              --gtb-tab-border-t-color: var(--gtb-border-color);
+              --gtb-tab-border-r-width: 1px;
+              --gtb-tab-border-r-color: var(--gtb-border-color);
+              --gtb-tab-border-b-width: 0;
+              --gtb-tab-border-l-width: 1px;
+              --gtb-tab-border-l-color: var(--gtb-border-color);
+
+              --gtb-tab-border-tl-radius: 0.75rem;
+              --gtb-tab-border-tr-radius: 0.75rem;
+              --gtb-tab-border-br-radius: 0;
+              --gtb-tab-border-bl-radius: 0;
+
+              margin-bottom: -0.1em;
+            }
+
+            button:first-of-type:is(.active, [aria-selected="true"])::before {
+              bottom: 0;
+              left: 0;
+              border: 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+
+            button:not(:first-of-type):is(.active, [aria-selected="true"])::before {
+              bottom: calc(var(--border-radius) * 0.08);
+              left: calc(var(--border-radius) * -1);
+              box-shadow: 5px 5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-right: 1px solid var(--gtb-border-color);
+              border-bottom: 1px solid var(--gtb-border-color);
+              border-radius: 0 0 100vh 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+
+            button:is(.active, [aria-selected="true"])::after {
+              bottom: calc(var(--border-radius) * 0.08);
+              right: calc(var(--border-radius) * -1);
+              box-shadow: -5px 5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-bottom: 1px solid var(--gtb-border-color);
+              border-left: 1px solid var(--gtb-border-color);
+              border-radius: 0 0 0 100vh;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+          }
+
+          [data-placement="top"][data-alignment="center"] &,
+          [data-placement="top"][data-alignment="end"] & {
+            button:is(.active, [aria-selected="true"])::before {
+              bottom: calc(var(--border-radius) * 0.08);
+              left: calc(var(--border-radius) * -1);
+              box-shadow: 5px 5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-right: 1px solid var(--gtb-border-color);
+              border-bottom: 1px solid var(--gtb-border-color);
+              border-radius: 0 0 100vh 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+          }
+
+          [data-placement="top"][data-alignment="end"] & {
+            button:last-of-type:is(.active, [aria-selected="true"])::after {
+              right: 0;
+              bottom: 0;
+              border: 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+          }
+
+          [data-placement="bottom"] & {
+            margin-top: 0;
+
+            button {
+              --gtb-tab-border-t-width: 0;
+              --gtb-tab-border-r-width: 0;
+              --gtb-tab-border-b-width: 0;
+              --gtb-tab-border-l-width: 0;
+              --gtb-tab-border-tr-radius: 0;
+              --gtb-tab-border-tl-radius: 0;
+            }
+
+            button:is(.active, [aria-selected="true"]) {
+              --gtb-tab-border-t-width: 0;
+              --gtb-tab-border-r-width: 1px;
+              --gtb-tab-border-r-color: var(--gtb-border-color);
+              --gtb-tab-border-b-width: 1px;
+              --gtb-tab-border-b-color: var(--gtb-border-color);
+              --gtb-tab-border-l-width: 1px;
+              --gtb-tab-border-l-color: var(--gtb-border-color);
+
+              --gtb-tab-border-br-radius: 0.75rem;
+              --gtb-tab-border-bl-radius: 0.75rem;
+
+              margin-top: -0.1em;
+            }
+
+            button:is(.active, [aria-selected="true"])::before {
+              top: 0;
+              left: 0;
+              border: 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+
+            button:is(.active, [aria-selected="true"])::after {
+              top: calc(var(--border-radius) * 0.08);
+              right: calc(var(--border-radius) * -1);
+              box-shadow: -5px -5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-top: 1px solid var(--gtb-border-color);
+              border-left: 1px solid var(--gtb-border-color);
+              border-radius: 100vh 0 0 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+
+            button:first-of-type:is(.active, [aria-selected="true"])::before {
+              top: 0;
+              left: 0;
+              border: 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+
+            button:not(:first-of-type):is(.active, [aria-selected="true"])::before {
+              top: calc(var(--border-radius) * 0.08);
+              left: calc(var(--border-radius) * -1);
+              box-shadow: 5px -5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-top: 1px solid var(--gtb-border-color);
+              border-right: 1px solid var(--gtb-border-color);
+              border-radius: 0 100vh 0 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+          }
+
+          [data-placement="bottom"][data-alignment="center"] &,
+          [data-placement="bottom"][data-alignment="end"] & {
+            button:is(.active, [aria-selected="true"])::before {
+              top: calc(var(--border-radius) * 0.08);
+              left: calc(var(--border-radius) * -1);
+              box-shadow: 5px -5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-top: 1px solid var(--gtb-border-color);
+              border-right: 1px solid var(--gtb-border-color);
+              border-radius: 0 100vh 0 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+          }
+
+          [data-placement="bottom"][data-alignment="end"] & {
+            button:last-of-type:is(.active, [aria-selected="true"])::after {
+              top: 0;
+              right: 0;
+              border: 0;
+              background-color: var(--_body-bg, hsl(0deg 0% 100%));
+            }
+          }
+
+          [data-placement="left"] &,
+          [data-placement="right"] & {
+            --gtb-tab-list-border-t-width: 1px;
+            --gtb-tab-list-border-b-width: 1px;
+            --gtb-tab-list-bg: var(--gtb-nav-bg);
+            --gtb-tab-list-gap: 0.5rem;
+
+            --gtb-tab-border-t-color: transparent;
+            --gtb-tab-border-b-color: transparent;
+            --gtb-tab-border-l-color: transparent;
+            --gtb-tab-border-r-color: transparent;
+
+            margin-bottom: 0;
+            padding-block: 2rem;
+            writing-mode: horizontal-tb;
+          }
+
+          [data-placement="left"] & {
+            --gtb-tab-list-border-l-width: 1px;
+            --gtb-tab-list-border-r-width: 0;
+            --gtb-tab-list-border-tl-radius: 0.75rem;
+            --gtb-tab-list-border-bl-radius: 0.75rem;
+
+            padding-inline-start: 1rem;
+
+            button {
+              --gtb-tab-border-tl-radius: 100vh;
+              --gtb-tab-border-bl-radius: 100vh;
+            }
+
+            button:is(.active, [aria-selected="true"]) {
+              --gtb-tab-border-t-width: 0;
+              --gtb-tab-border-r-width: 0;
+              --gtb-tab-border-b-width: 0;
+              --gtb-tab-border-l-width: 0;
+            }
+
+            button:is(.active, [aria-selected="true"]):hover,
+            button:is(.active, [aria-selected="true"]):focus,
+            button:is(.active, [aria-selected="true"]):focus-visible {
+              --gtb-tab-bg: var(--_body-bg);
+            }
+
+            button:is(.active, [aria-selected="true"])::before {
+              top: calc(var(--border-radius) * -1);
+              right: 0;
+              box-shadow: 5px 5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-radius: 0 0 100vh 0;
+            }
+
+            button:is(.active, [aria-selected="true"])::after {
+              right: 0;
+              bottom: calc(var(--border-radius) * -1);
+              box-shadow: 5px -5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-radius: 0 100vh 0 0;
+            }
+          }
+
+          [data-placement="right"] & {
+            --gtb-tab-list-border-l-width: 0;
+            --gtb-tab-list-border-r-width: 1px;
+
+            --gtb-tab-list-border-tr-radius: 0.75rem;
+            --gtb-tab-list-border-br-radius: 0.75rem;
+
+            padding-inline-end: 1rem;
+
+            button {
+              border-radius: 0 100vh 100vh 0;
+            }
+
+            button:is(.active, [aria-selected="true"]) {
+              --gtb-tab-border-t-width: 0;
+              --gtb-tab-border-r-width: 0;
+              --gtb-tab-border-b-width: 0;
+              --gtb-tab-border-l-width: 0;
+            }
+
+            button:is(.active, [aria-selected="true"]):hover,
+            button:is(.active, [aria-selected="true"]):focus,
+            button:is(.active, [aria-selected="true"]):focus-visible {
+              --gtb-tab-bg: var(--_body-bg);
+            }
+
+            button:is(.active, [aria-selected="true"])::before {
+              top: calc(var(--border-radius) * -1);
+              left: 0;
+              box-shadow: -5px 5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-radius: 0 0 0 100vh;
+            }
+
+            button:is(.active, [aria-selected="true"])::after {
+              bottom: calc(var(--border-radius) * -1);
+              left: 0;
+              box-shadow: -5px -5px 0 5px var(--_body-bg, hsl(0deg 0% 100%));
+              border-radius: 100vh 0 0 0;
+            }
+          }
+        }
+      }
+
+      /* Tab Panel */
+      .gtb_tab_panel {
+        --gtb-panel-border-tl-radius: 0.75rem;
+        --gtb-panel-border-tr-radius: 0.75rem;
+        --gtb-panel-border-br-radius: 0.75rem;
+        --gtb-panel-border-bl-radius: 0.75rem;
+
+        /* Media Queries */
+        @media screen and (width > 640px) {
+          [data-placement="top"] & {
+            --gtb-panel-border-tl-radius: 0;
+            --gtb-panel-border-tr-radius: 0.75rem;
+            --gtb-panel-border-br-radius: 0.75rem;
+            --gtb-panel-border-bl-radius: 0.75rem;
+          }
+
+          [data-placement="top"][data-alignment="center"] & {
+            --gtb-panel-border-tl-radius: 0.75rem;
+          }
+
+          [data-placement="top"][data-alignment="end"] & {
+            --gtb-panel-border-tr-radius: 0;
+            --gtb-panel-border-tl-radius: 0.75rem;
+          }
+
+          [data-placement="bottom"] & {
+            --gtb-panel-border-tl-radius: 0.75rem;
+            --gtb-panel-border-tr-radius: 0.75rem;
+            --gtb-panel-border-br-radius: 0.75rem;
+            --gtb-panel-border-bl-radius: 0;
+          }
+
+          [data-placement="bottom"][data-alignment="center"] & {
+            --gtb-panel-border-bl-radius: 0.75rem;
+          }
+
+          [data-placement="bottom"][data-alignment="end"] & {
+            --gtb-panel-border-br-radius: 0;
+            --gtb-panel-border-bl-radius: 0.75rem;
+          }
+
+          [data-placement="left"] & {
+            --gtb-panel-border-l-width: 0;
+
+            --gtb-panel-border-tl-radius: 0;
+            --gtb-panel-border-tr-radius: 0.75rem;
+            --gtb-panel-border-br-radius: 0.75rem;
+            --gtb-panel-border-bl-radius: 0;
+          }
+
+          [data-placement="right"] & {
+            --gtb-panel-border-r-width: 0;
+
+            --gtb-panel-border-tl-radius: 0.75rem;
+            --gtb-panel-border-tr-radius: 0;
+            --gtb-panel-border-bl-radius: 0.75rem;
+            --gtb-panel-border-br-radius: 0;
+          }
+        }
+      }
+    }
+
+    /* Media Feature - prefers-color-scheme */
+    @media (prefers-color-scheme: light) {
+      :root {
+        [data-variant="rounded"] {
+          --gtb-tab-bg-hover: var(--gtb-base-lightest);
+        }
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        [data-variant="rounded"] {
+          --gtb-tab-bg-hover: var(--gtb-base-dark);
+          --gtb-nav-bg: var(--gtb-base);
+        }
+      }
+    }
+  </style>
+}

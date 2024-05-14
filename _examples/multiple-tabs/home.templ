@@ -1,0 +1,190 @@
+package main
+
+import "github.com/indaco/tabber"
+
+templ HomePage() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>tabber - multiple tabs</title>
+			<!-- inject component styles -->
+			@tabber.TabberCSS(ctx)
+			<!-- styles -->
+			<style type="text/css">
+				.centered {
+					width: fit-content;
+					height: fit-content;
+					margin: auto;
+				}
+
+				p {
+					line-height: 1.25;
+				}
+			</style>
+		</head>
+		<body>
+			<div class="centered">
+				<!-- create and render the tab component -->
+				@tabber.Root("tabs-1") {
+					@tabber.TabList() {
+						@tabber.Tab(1, "First")
+						@tabber.Tab(2, "Second")
+						@tabber.Tab(3, "Third")
+					}
+					@tabber.TabPanel(1) {
+						<h3>1 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+					@tabber.TabPanel(2) {
+						<h3>2 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+					@tabber.TabPanel(3) {
+						<h3>3 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+				}
+			</div>
+			<!-- Second Tabber Component -->
+			<div class="centered" style="margin-top: 3rem;">
+				<!-- create and render the tab component -->
+				@tabber.Root("tabs-2") {
+					@tabber.TabList() {
+						@tabber.Tab(1, "First")
+						@tabber.Tab(2, "Second")
+						@tabber.Tab(3, "Third")
+					}
+					@tabber.TabPanel(1) {
+						<h3>1 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+					@tabber.TabPanel(2) {
+						<h3>2 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+					@tabber.TabPanel(3) {
+						<h3>3 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p style="color: blue; font-weight: 700;">
+							Once here, the focus is no more on the tab because the panel contains an interactive element.
+						</p>
+						<p style="color: green; font-weight: 700;">
+							This facilitate seamless interaction.
+						</p>
+						<input type="text" placeholder="your name"/>
+					}
+				}
+			</div>
+			<!-- inject component javascript -->
+			@tabber.TabberJS(tabber.GetConfigMapFromContext(ctx))
+		</body>
+	</html>
+}

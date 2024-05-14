@@ -1,0 +1,144 @@
+package main
+
+import "github.com/indaco/tabber"
+
+templ HomePage() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>tabber - custom theme</title>
+			<!-- inject component styles -->
+			@tabber.TabberCSS(ctx)
+			<!-- styles -->
+			<style type="text/css">
+				.centered {
+					width: fit-content;
+					height: fit-content;
+					margin: auto;
+				}
+
+				p {
+					line-height: 1.25;
+				}
+
+				:root {
+					--gtb-base: rgb(99, 102, 241);
+
+					--gtb-panel-color: var(--gtb-base-dark);
+					--gtb-panel-bg: var(--gtb-base-lightest);
+				}
+
+				[data-placement="top"] .gtb_tab_list button.active{
+					--gtb-tab-border-t-color: var(--gtb-base);
+				}
+
+				[data-placement="bottom"] .gtb_tab_list button.active{
+					--gtb-tab-border-b-color: var(--gtb-base);
+				}
+
+				[data-placement="left"] .gtb_tab_list button.active{
+					--gtb-tab-border-l-color: var(--gtb-base);
+				}
+
+				[data-placement="right"] .gtb_tab_list button.active{
+					--gtb-tab-border-r-color: var(--gtb-base);
+				}
+
+				@media screen and (min-width: 640px) {
+					:root {
+						[data-placement="left"],
+						[data-placement="right"] {
+							--gtb-tab-list-bg: var(--gtb-base-light);
+						}
+					}
+				}
+			</style>
+		</head>
+		<body>
+			@DemoSelectors(ctx)
+			<div class="centered">
+				<!-- create and render the tab component -->
+				@tabber.Root("custom-theme") {
+					@tabber.TabList() {
+						@tabber.Tab(1, "First")
+						@tabber.Tab(2, "Second")
+						@tabber.Tab(3, "Third")
+					}
+					@tabber.TabPanel(1) {
+						<h3>1 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+					@tabber.TabPanel(2) {
+						<h3>2 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+					@tabber.TabPanel(3) {
+						<h3>3 - Heading</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+							gravida in fermentum et sollicitudin ac orci phasellus egestas.
+							Viverra orci sagittis eu volutpat odio.
+						</p>
+						<p>
+							Sed odio morbi quis commodo odio aenean sed. Pharetra et ultrices
+							neque ornare aenean euismod elementum nisi quis. Aliquet enim tortor
+							at auctor. Sed velit dignissim sodales ut eu sem integer vitae
+							justo. Lacus sed turpis tincidunt id aliquet risus feugiat in ante.
+						</p>
+						<p>
+							Volutpat est velit egestas dui id. Urna cursus eget nunc scelerisque
+							viverra. Ac turpis egestas sed tempus urna. Donec adipiscing
+							tristique risus nec feugiat in fermentum. Amet aliquam id diam
+							maecenas. A arcu cursus vitae congue mauris rhoncus aenean. Commodo
+							odio aenean sed adipiscing diam. Rhoncus urna neque viverra justo
+							nec ultrices dui sapien. Massa tincidunt dui ut ornare lectus sit.
+						</p>
+					}
+				}
+			</div>
+			<!-- inject component javascript -->
+			@tabber.TabberJS(tabber.GetConfigMapFromContext(ctx))
+		</body>
+	</html>
+}

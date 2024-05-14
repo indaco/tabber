@@ -1,0 +1,152 @@
+package styles
+
+// Variant Name: Pills
+templ TabberPillsCss() {
+	<style>
+    :root {
+      [data-variant="pills"] {
+        --gtb-tab-list-bg: transparent;
+        --gtb-tab-ring-width: 1px;
+      }
+    }
+
+    [data-variant="pills"] .gtb_tab_list {
+    [data-placement="top"] &,
+    [data-placement="bottom"] & {
+
+      justify-content: center;
+      border-radius: 100vh;
+    }
+
+    button {
+      border-radius: 100vh;
+    }
+
+    button:not(:is(.active, [aria-selected="true"])):hover {
+      outline: var(--gtb-tab-ring-width) var(--gtb-tab-ring-style)
+          var(--gtb-tab-ring-color);
+      outline-offset: var(--gtb-tab-ring-offset);
+    }
+
+    /* Media Queries */
+    @media screen and (width > 640px) {
+      [data-placement="top"] &,
+      [data-placement="bottom"] & {
+        margin: auto;
+        width: 50%;
+      }
+
+      [data-placement="left"] &,
+      [data-placement="right"] & {
+        grid-template-columns: auto;
+        align-content: space-around;
+        transform-origin: center center;
+        padding: 0;
+      }
+
+      [data-placement="top"] &::after,
+      [data-placement="bottom"] &::after {
+        position: absolute;
+        right: 0;
+        left: 0;
+        transform-origin: left;
+        translate: var(--_left, 0) 0;
+        z-index: -1;
+        transition: translate 400ms cubic-bezier(0.88, -0.35, 0.565, 1.35);
+        border-radius: 100vh;
+        background-color: var( --_pseudo-active);
+        width: var(--_width, 0);
+        height: 0;
+        content: "";
+      }
+
+      [data-placement="top"] &::after {
+        bottom: 0;
+      }
+
+      [data-placement="bottom"] &::after {
+        top: 0;
+      }
+
+      [data-placement="left"] &,
+      [data-placement="right"] & {
+        button {
+          justify-content: center;
+        }
+      }
+
+      [data-placement="left"] & {
+        button {
+          transform: rotate(-90deg);
+        }
+      }
+
+      [data-placement="right"] & {
+        button {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    @media screen and (width > 650px) {
+      [data-placement="top"] &::after,
+      [data-placement="bottom"] &::after {
+        height: 100%;
+      }
+    }
+  }
+
+  /* Media Feature - prefers-color-scheme */
+  @media (prefers-color-scheme: light) {
+    :root {
+      [data-variant="pills"] {
+        --gtb-tab-bg-hover: var(--gtb-base-lightest);
+        --gtb-tab-bg-focus: var(--gtb-base-lighter);
+        --gtb-tab-bg-active: var(--gtb-base-lighter);
+
+        --_pseudo-active: var(--gtb-base-lighter);
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      [data-variant="pills"] {
+        --gtb-tab-bg-hover: var(--gtb-base-light);
+        --gtb-tab-bg-focus: var(--gtb-base-light);
+        --gtb-tab-bg-active: var(--gtb-base);
+
+        --_pseudo-active: var(--gtb-base);
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: light) and (width > 650px) {
+    :root {
+      [data-variant="pills"] {
+        &[data-placement="top"],
+        &[data-placement="bottom"] {
+          --gtb-tab-bg: transparent;
+          --gtb-tab-bg-hover: transparent;
+          --gtb-tab-bg-focus: transparent;
+          --gtb-tab-bg-active: transparent;
+        }
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) and (width > 650px) {
+    :root {
+      [data-variant="pills"] {
+        &[data-placement="top"],
+        &[data-placement="bottom"] {
+          --gtb-tab-bg: transparent;
+          --gtb-tab-bg-hover: transparent;
+          --gtb-tab-bg-focus: transparent;
+          --gtb-tab-bg-active: transparent;
+        }
+      }
+    }
+  }
+  </style>
+}

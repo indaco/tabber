@@ -1,0 +1,63 @@
+package main
+
+import "github.com/indaco/tabber"
+
+const Sketched tabber.Variant = "sketched"
+
+// SketchedVariant is a new variant for tabber.
+type SketchedVariant struct{}
+
+// Implement TabberVariant interface
+func (nv SketchedVariant) GetClassName() templ.Component {
+	return SketchedVariantCss()
+}
+
+templ SketchedVariantCss() {
+	<style>
+    :root {
+      [data-variant="sketched"] {
+        --gtb-root-py: 1.5em;
+        --gtb-root-px: 2em;
+        --gtb-root-border-width: 4px;
+        --gtb-root-border-style: solid;
+        --gtb-root-border-color: var(--gtb-base-20);
+
+        --gtb-root-border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
+        --gtb-tab-border-t-width: 2px;
+        --gtb-tab-border-t-style: solid;
+        --gtb-tab-border-t-color: var(--gtb-base-20);
+        --gtb-tab-border-r-width: 2px;
+        --gtb-tab-border-r-style: solid;
+        --gtb-tab-border-r-color: var(--gtb-base-20);
+        --gtb-tab-border-b-width: 2px;
+        --gtb-tab-border-b-style: solid;
+        --gtb-tab-border-b-color: var(--gtb-base-20);
+        --gtb-tab-border-l-width: 2px;
+        --gtb-tab-border-l-style: solid;
+        --gtb-tab-border-l-color: var(--gtb-base-20);
+
+        --gtb-tab-border-tl-radius: 255px 15px;
+        --gtb-tab-border-tr-radius: 15px 225px;
+        --gtb-tab-border-br-radius: 225px 15px;
+        --gtb-tab-border-bl-radius: 15px 255px;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        [data-variant="sketched"] {
+          --gtb-tab-bg-hover: var(--gtb-base-10);
+        }
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        [data-variant="sketched"] {
+          --gtb-tab-bg-hover: var(--gtb-base-60);
+        }
+      }
+    }
+  </style>
+}

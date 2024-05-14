@@ -1,0 +1,13 @@
+package tabber
+
+templ TabPanel(value int) {
+	<div
+		id={ makePanelId(value) }
+		class="gtb_tab_panel"
+		role="tabpanel"
+		aria-labelledby={ makeTabId(value) }
+		aria-current="page"
+	>
+		{ children... }
+	</div>
+}

@@ -1,0 +1,242 @@
+package tabber
+
+import "github.com/indaco/tabber/styles"
+
+templ TabberCSS(ctx context.Context) {
+	<style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      border: 0;
+      border-style: solid;
+    }
+
+    :root {
+      /* - Color Shades - */
+      --gtb-color-space: oklab;
+      --gtb-base: hsl(215deg 16.3% 46.9%);
+
+      --gtb-base-10: color-mix(
+        in var(--gtb-color-space),
+        var(--gtb-base) 10%,
+        white
+      );
+
+      --gtb-base-20: color-mix(
+        in var(--gtb-color-space),
+        var(--gtb-base) 30%,
+        white
+      );
+
+      --gtb-base-30: color-mix(
+        in var(--gtb-color-space),
+        var(--gtb-base) 50%,
+        white
+      );
+
+      --gtb-base-40: color-mix(
+        in var(--gtb-color-space),
+        var(--gtb-base) 70%,
+        white
+      );
+
+      --gtb-base-50: var(--gtb-base);
+
+      --gtb-base-60: color-mix(
+        in var(--gtb-color-space),
+        var(--gtb-base) 70%,
+        black
+      );
+
+      --gtb-base-70: color-mix(
+        in var(--gtb-color-space),
+        var(--gtb-base) 50%,
+        black
+      );
+
+      --gtb-base-80: color-mix(
+        in var(--gtb-color-space),
+        var(--gtb-base) 30%,
+        black
+      );
+
+      --gtb-base-90: color-mix(
+        in var(--gtb-color-space),
+        var(--gtb-base) 10%,
+        black
+      );
+
+      --gtb-base-lightest: var(--gtb-base-10);
+      --gtb-base-lighter: var(--gtb-base-20);
+      --gtb-base-light: var(--gtb-base-40);
+      --gtb-base-dark: var(--gtb-base-60);
+      --gtb-base-darker: var(--gtb-base-80);
+      --gtb-base-darkest: var(--gtb-base-90);
+
+      /* ******************************************** *
+       * Tabber Component
+       * ******************************************** */
+
+      /* - TabContainer - */
+      --gtb-root-width: 100%;
+      --gtb-root-max-width: fit-content;
+      --gtb-root-my: 0;
+      --gtb-root-mx: 0;
+      --gtb-root-py: 0;
+      --gtb-root-px: 0;
+      --gtb-root-border-width: 0;
+      --gtb-root-border-style: solid;
+      --gtb-root-border-color: transparent;
+      --gtb-root-border-radius: 0;
+
+      /* - TabList - */
+      --gtb-tab-list-width: auto;
+      --gtb-tab-list-max-width: calc(100% + 20%);
+      --gtb-tab-list-alignment: flex-start;
+      --gtb-tab-list-my: 0;
+      --gtb-tab-list-mx: 0;
+      --gtb-tab-list-py: 0;
+      --gtb-tab-list-px: 0;
+      --gtb-tab-list-gap: 0.5em;
+      --gtb-tab-list-bg: var(--gtb-bg);
+      --gtb-tab-list-border-t-width: 0;
+      --gtb-tab-list-border-t-style: solid;
+      --gtb-tab-list-border-t-color: var(--gtb-border-color);
+      --gtb-tab-list-border-r-width: 0;
+      --gtb-tab-list-border-r-style: solid;
+      --gtb-tab-list-border-r-color: var(--gtb-border-color);
+      --gtb-tab-list-border-b-width: 0;
+      --gtb-tab-list-border-b-style: solid;
+      --gtb-tab-list-border-b-color: var(--gtb-border-color);
+      --gtb-tab-list-border-l-width: 0;
+      --gtb-tab-list-border-l-style: solid;
+      --gtb-tab-list-border-l-color: var(--gtb-border-color);
+      --gtb-tab-list-border-tl-radius: 0;
+      --gtb-tab-list-border-tr-radius: 0;
+      --gtb-tab-list-border-bl-radius: 0;
+      --gtb-tab-list-border-br-radius: 0;
+
+      /* - Tab - */
+      --gtb-tab-py: 0.75em;
+      --gtb-tab-px: 1em;
+      --gtb-tab-gap: 0.375em;
+      --gtb-tab-color: var(--gtb-color);
+      --gtb-tab-color-hover: var(--gtb-color-hover);
+      --gtb-tab-color-focus: var(--gtb-color-focus);
+      --gtb-tab-color-active: var(--gtb-color-active);
+      --gtb-tab-font-family: inherit;
+      --gtb-tab-bg: transparent;
+      --gtb-tab-bg-hover: var(--gtb-bg-hover);
+      --gtb-tab-bg-focus: var(--gtb-bg-focus);
+      --gtb-tab-bg-active: var(--gtb-bg-active);
+      --gtb-tab-border-t-width: 0;
+      --gtb-tab-border-t-style: solid;
+      --gtb-tab-border-t-color: var(--gtb-border-color);
+      --gtb-tab-border-r-width: 0;
+      --gtb-tab-border-r-style: solid;
+      --gtb-tab-border-r-color: var(--gtb-border-color);
+      --gtb-tab-border-b-width: 0;
+      --gtb-tab-border-b-style: solid;
+      --gtb-tab-border-b-color: var(--gtb-border-color);
+      --gtb-tab-border-l-width: 0;
+      --gtb-tab-border-l-style: solid;
+      --gtb-tab-border-l-color: var(--gtb-border-color);
+      --gtb-tab-border-t-color-hover: var(--gtb-tab-border-t-color);
+      --gtb-tab-border-r-color-hover: var(--gtb-tab-border-r-color);
+      --gtb-tab-border-b-color-hover: var(--gtb-tab-border-b-color);
+      --gtb-tab-border-l-color-hover: var(--gtb-tab-border-l-color);
+
+      --gtb-tab-border-tl-radius: 0;
+      --gtb-tab-border-tr-radius: 0;
+      --gtb-tab-border-bl-radius: 0;
+      --gtb-tab-border-br-radius: 0;
+      --gtb-tab-ring-width: 0;
+      --gtb-tab-ring-style: solid;
+      --gtb-tab-ring-offset: 0.125rem;
+
+      /* - TabPanel - */
+      --gtb-panel-width: 100%;
+      --gtb-panel-max-width: 680px;
+      --gtb-panel-my: 0;
+      --gtb-panel-mx: 0;
+      --gtb-panel-py: 1.25em;
+      --gtb-panel-px: 1.25em;
+      --gtb-panel-color: var(--gtb-color);
+      --gtb-panel-bg: var(--gtb-bg);
+      --gtb-panel-border-t-width: 0;
+      --gtb-panel-border-t-style: solid;
+      --gtb-panel-border-t-color: var(--gtb-border-color);
+      --gtb-panel-border-r-width: 0;
+      --gtb-panel-border-r-style: solid;
+      --gtb-panel-border-r-color: var(--gtb-border-color);
+      --gtb-panel-border-b-width: 0;
+      --gtb-panel-border-b-style: solid;
+      --gtb-panel-border-b-color: var(--gtb-border-color);
+      --gtb-panel-border-l-width: 0;
+      --gtb-panel-border-l-style: solid;
+      --gtb-panel-border-l-color: var(--gtb-border-color);
+      --gtb-panel-border-tl-radius: 0;
+      --gtb-panel-border-tr-radius: 0;
+      --gtb-panel-border-bl-radius: 0;
+      --gtb-panel-border-br-radius: 0;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        /* Simplified set of css custom props to make themes */
+        --gtb-color: var(--gtb-base-darker);
+        --gtb-color-hover: var(--gtb-base-darker);
+        --gtb-color-focus: var(--gtb-base-darker);
+        --gtb-color-active: var(--gtb-base-darkest);
+
+        --gtb-bg: inherit;
+        --gtb-bg-hover: inherit;
+        --gtb-bg-focus: inherit;
+        --gtb-bg-active: inherit;
+
+        --gtb-border-color: var(--gtb-base-lighter);
+        --gtb-border-active: var(--gtb-base);
+
+        --gtb-nav-bg: var(--gtb-base-lighter);
+
+        --gtb-tab-ring-color: var(--gtb-base-light);
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        /* Simplified set of css custom props to make themes */
+        --gtb-color: var(--gtb-base-lighter);
+        --gtb-color-hover: var(--gtb-base-lighter);
+        --gtb-color-focus: var(--gtb-base-lighter);
+        --gtb-color-active: var(--gtb-base-lightest);
+
+        --gtb-bg: inherit;
+        --gtb-bg-hover: inherit;
+        --gtb-bg-focus: inherit;
+        --gtb-bg-active: inherit;
+
+        --gtb-border-color: var(--gtb-base-light);
+        --gtb-border-active: var(--gtb-base);
+
+        --gtb-nav-bg: var(--gtb-base-darker);
+
+        --gtb-tab-ring-color: var(--gtb-base);
+      }
+    }
+  </style>
+	/* ******************************************** *
+   * Stylesheets
+   * ******************************************** */
+	// - Import the headless stylesheet always
+	@styles.TabberHeadlessCss()
+	// - Import only user-registered stylesheet variants
+	for _, config := range GetConfigMapFromContext(ctx).Data {
+		for _, variant := range config.Variants {
+			if _, ok := registeredTabberVariants[variant.String()]; ok {
+				@UseVariant(variant.String())
+			}
+		}
+	}
+}

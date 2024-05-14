@@ -1,0 +1,118 @@
+package styles
+
+// Variant Name: Accent
+templ TabberAccentCss() {
+	<style>
+    [data-variant="accent"] .gtb_tab_list {
+      button {
+        --gtb-tab-border-tl-radius: 0.25rem;
+        --gtb-tab-border-tr-radius: 0.25rem;
+      }
+
+      button:is(.active, [aria-selected="true"]) {
+        --gtb-tab-border-b-width: 2px;
+      }
+
+      button:is(.active, [aria-selected="true"]):focus,
+      button:is(.active, [aria-selected="true"]):focus-visible {
+        --gtb-tab-bg-focus: transparent;
+      }
+
+      button:not(:is(.active, [aria-selected="true"]))::after {
+        position: absolute;
+        bottom: var(--_bottom, 0);
+        left: 0;
+        scale: var(--_width, 0) 1;
+        transition: scale 0.3s;
+        background-color: var(--gtb-base-30);
+        width: 100%;
+        height: 2px;
+        content: "";
+      }
+
+      button:not(:is(.active, [aria-selected="true"])):hover::after,
+      button:not(:is(.active, [aria-selected="true"])):focus::after,
+      button:not(:is(.active, [aria-selected="true"])):focus-visible::after {
+        --_width: 1;
+      }
+
+      [data-placement="bottom"] & {
+        button {
+          --gtb-tab-border-tl-radius: 0;
+          --gtb-tab-border-tr-radius: 0;
+          --gtb-tab-border-bl-radius: 0.25rem;
+          --gtb-tab-border-br-radius: 0.25rem;
+        }
+
+        button:is(.active, [aria-selected="true"]) {
+          --gtb-tab-border-t-width: 2px;
+          --gtb-tab-border-b-width: 0;
+        }
+
+        button:not(:is(.active, [aria-selected="true"]))::after {
+          --_bottom: 100%;
+        }
+      }
+
+      /* Media Queries */
+      @media screen and (width > 640px) {
+        [data-placement="left"] & {
+          padding-block: 2rem;
+
+          button {
+            --gtb-tab-border-tl-radius: 0.25rem;
+            --gtb-tab-border-tr-radius: 0;
+            --gtb-tab-border-bl-radius: 0.25rem;
+            --gtb-tab-border-br-radius: 0;
+          }
+
+          button:is(.active, [aria-selected="true"]) {
+            --gtb-tab-border-b-width: 0;
+            --gtb-tab-border-r-width: 2px;
+          }
+
+          button:not(:is(.active, [aria-selected="true"]))::after {
+            display: none;
+          }
+        }
+
+        [data-placement="right"] & {
+          padding-block: 2rem;
+
+          button {
+            --gtb-tab-border-tr-radius: 0.25rem;
+            --gtb-tab-border-tl-radius: 0;
+            --gtb-tab-border-bl-radius: 0;
+            --gtb-tab-border-br-radius: 0.25rem;
+          }
+
+          button:is(.active, [aria-selected="true"]) {
+            --gtb-tab-border-b-width: 0;
+            --gtb-tab-border-l-width: 2px;
+          }
+
+          button:not(:is(.active, [aria-selected="true"]))::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    /* Media Feature - prefers-color-scheme */
+    @media (prefers-color-scheme: light) {
+      :root {
+        [data-variant="accent"] {
+          --gtb-tab-bg-hover: var(--gtb-base-lightest);
+        }
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        [data-variant="accent"] {
+          --gtb-tab-bg-hover: var(--gtb-base-dark);
+        }
+      }
+    }
+  </style>
+}

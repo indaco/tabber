@@ -1,0 +1,48 @@
+package tabber
+
+import "fmt"
+
+func isTabActive(v1 int, v2 int) bool {
+	return equal(v1, v2)
+}
+
+// getIcon If icons are provided, use the first one; otherwise, empty TabIcon struct.
+func getIcon(icons []*TabIcon) *TabIcon {
+	var icon *TabIcon
+	if len(icons) > 0 {
+		icon = icons[0]
+	} else {
+		icon = &TabIcon{}
+	}
+	return icon
+}
+
+templ Tab(value int, label string, icons ...*TabIcon) {
+	@renderTab(value, label, getIcon(icons))
+}
+
+templ renderTab(value int, label string, icon *TabIcon) {
+	<button
+		id={ makeTabId(value) }
+		role="tab"
+		data-tab-id={ intToString(value) }
+		aria-selected="false"
+		aria-controls={ makePanelId(value) }
+		tabindex="-1"
+	>
+		if icon.value != "" {
+			<span class={ gtb_tab_icon(icon.size) }>
+				@templ.Raw(icon.value)
+			</span>
+		}
+		{ label }
+	</button>
+}
+
+css gtb_tab_icon(size float32) {
+	display: inline-flex;
+	align-items: center;
+	flex-shrink: 0;
+	width: { fmt.Sprintf("%fem", size) };
+	height: { fmt.Sprintf("%fem", size) };
+}

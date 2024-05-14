@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetpack-io/devbox/0.10.4/.schema/devbox.schema.json",
+  "packages": [
+    "git@latest",
+    "go@latest",
+    "golangci-lint@latest",
+    "gnumake@latest",
+    "templ@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to @indaco/tabber devbox!'",
+      "git config core.hooksPath .githooks"
+    ],
+    "scripts": {
+      "build": ["make build"],
+      "templ": ["make templ"],
+      "test": ["make test"]
+    }
+  }
+}
