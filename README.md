@@ -50,7 +50,7 @@ A fully accessible, configurable and themeable server-rendered Tab component for
 
 ![Demo](statics/demo.gif)
 
-> Disclaimer: Please note that the demo video may not include the latest features and updates of the project. However, it still accurately represents the overall concepts and functionality.
+> **Disclaimer**: Please note that the demo video may not include the latest features and updates of the project. However, it still accurately represents the overall concepts and functionality.
 
 ## Installation
 
