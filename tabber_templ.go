@@ -9,7 +9,6 @@ import "github.com/a-h/templ"
 import "context"
 import "io"
 import "bytes"
-import "strings"
 
 import "fmt"
 
@@ -95,18 +94,4 @@ func Root(id string) templ.Component {
 		}
 		return templ_7745c5c3_Err
 	})
-}
-
-func gtb_tabs(direction string) templ.CSSClass {
-	var templ_7745c5c3_CSSBuilder strings.Builder
-	templ_7745c5c3_CSSBuilder.WriteString(`position:relative;`)
-	templ_7745c5c3_CSSBuilder.WriteString(`width:var(--gtb-root-width);`)
-	templ_7745c5c3_CSSBuilder.WriteString(`max-width:var(--gtb-root-max-width);`)
-	templ_7745c5c3_CSSBuilder.WriteString(`display:flex;`)
-	templ_7745c5c3_CSSBuilder.WriteString(string(templ.SanitizeCSS(`flex-direction`, direction)))
-	templ_7745c5c3_CSSID := templ.CSSID(`gtb_tabs`, templ_7745c5c3_CSSBuilder.String())
-	return templ.ComponentCSSClass{
-		ID:    templ_7745c5c3_CSSID,
-		Class: templ.SafeCSS(`.` + templ_7745c5c3_CSSID + `{` + templ_7745c5c3_CSSBuilder.String() + `}`),
-	}
 }
