@@ -356,7 +356,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 <!-- Resources -->
 
-[_Placement_]: ./types.go#L8-L11
-[_Alignment_]: ./types.go#L16-L18
+[_Placement_]: ./types.go#L11-L17
+[_Alignment_]: ./types.go#L19-L25
 [_Variant_]: ./types.go#L23-29
 [_TabIcon_]: ./types.go#L35-L38
