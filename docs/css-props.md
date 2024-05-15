@@ -89,44 +89,46 @@ Here below is the list of all CSS variables defined and their default values:
 
 ## Tab
 
-| CSS Property                     | Default Value                   | Description                                       |
-| :------------------------------- | :------------------------------ | :------------------------------------------------ |
-| `--gtb-tab-py`                   | _0.75em_                        | The padding on the y-axis of the tab item.        |
-| `--gtb-tab-px`                   | _1em_                           | The padding on the x-axis of the tab item.        |
-| `--gtb-tab-gap`                  | _0.375em_                       | The gap between tab items.                        |
-| `--gtb-tab-color`                | _var(--gtb-color)_              | The color of the tab item.                        |
-| `--gtb-tab-color-hover`          | _var(--gtb-color-hover)_        | The color of the tab item on hover.               |
-| `--gtb-tab-color-focus`          | _var(--gtb-color-focus)_        | The color of the tab item on focus.               |
-| `--gtb-tab-color-active`         | _var(--gtb-color-active)_       | The color of the active tab item.                 |
-| `--gtb-tab-font-family`          | _inherit_                       | The font family of the tab item.                  |
-| `--gtb-tab-bg`                   | _transparent_                   | The background color of the tab item.             |
-| `--gtb-tab-bg-hover`             | _var(--gtb-bg-hover)_           | The background color of the tab item on hover.    |
-| `--gtb-tab-bg-focus`             | _var(--gtb-bg-focus)_           | The background color of the tab item on focus.    |
-| `--gtb-tab-bg-active`            | _var(--gtb-bg-active)_          | The background color of the active tab item.      |
-| `--gtb-tab-border-t-width`       | _0_                             | The top border width of the tab item.             |
-| `--gtb-tab-border-t-style`       | _solid_                         | The top border style of the tab item.             |
-| `--gtb-tab-border-t-color`       | _var(--gtb-border-color)_       | The top border color of the tab item.             |
-| `--gtb-tab-border-r-width`       | _0_                             | The right border width of the tab item.           |
-| `--gtb-tab-border-r-style`       | _solid_                         | The right border style of the tab item.           |
-| `--gtb-tab-border-r-color`       | _var(--gtb-border-color)_       | The right border color of the tab item.           |
-| `--gtb-tab-border-b-width`       | _0_                             | The bottom border width of the tab item.          |
-| `--gtb-tab-border-b-style`       | _solid_                         | The bottom border style of the tab item.          |
-| `--gtb-tab-border-b-color`       | _var(--gtb-border-color)_       | The bottom border color of the tab item.          |
-| `--gtb-tab-border-l-width`       | _0_                             | The left border width of the tab item.            |
-| `--gtb-tab-border-l-style`       | _solid_                         | The left border style of the tab item.            |
-| `--gtb-tab-border-l-color`       | _var(--gtb-border-color)_       | The left border color of the tab item.            |
-| `--gtb-tab-border-t-color-hover` | _var(--gtb-tab-border-t-color)_ | The top border color of the tab item on hover.    |
-| `--gtb-tab-border-r-color-hover` | _var(--gtb-tab-border-r-color)_ | The right border color of the tab item on hover.  |
-| `--gtb-tab-border-b-color-hover` | _var(--gtb-tab-border-b-color)_ | The bottom border color of the tab item on hover. |
-| `--gtb-tab-border-l-color-hover` | _var(--gtb-tab-border-l-color)_ | The left border color of the tab item on hover.   |
-| `--gtb-tab-border-tl-radius`     | _0_                             | The top-left border radius of the tab item.       |
-| `--gtb-tab-border-tr-radius`     | _0_                             | The top-right border radius of the tab item.      |
-| `--gtb-tab-border-bl-radius`     | _0_                             | The bottom-left border radius of the tab item.    |
-| `--gtb-tab-border-br-radius`     | _0_                             | The bottom-right border radius of the tab item.   |
-| `--gtb-tab-ring-width`           | _0_                             | The width of the tab item's focus ring.           |
-| `--gtb-tab-ring-style`           | _solid_                         | The style of the tab item's focus ring.           |
-| `--gtb-tab-ring-color`           | _var(--gtb-base-light)_         | The color of the tab item's focus ring.           |
-| `--gtb-tab-ring-offset`          | _0.125rem_                      | The offset of the tab item's focus ring.          |
+| CSS Property                     | Default Value                   | Description                                        |
+| :------------------------------- | :------------------------------ | :------------------------------------------------- |
+| `--gtb-tab-py`                   | _0.75em_                        | The padding on the y-axis of the tab item.         |
+| `--gtb-tab-px`                   | _1em_                           | The padding on the x-axis of the tab item.         |
+| `--gtb-tab-color`                | _var(--gtb-color)_              | The color of the tab item.                         |
+| `--gtb-tab-color-hover`          | _var(--gtb-color-hover)_        | The color of the tab item on hover.                |
+| `--gtb-tab-color-focus`          | _var(--gtb-color-focus)_        | The color of the tab item on focus.                |
+| `--gtb-tab-color-active`         | _var(--gtb-color-active)_       | The color of the active tab item.                  |
+| `--gtb-tab-font-family`          | _inherit_                       | The font family of the tab item.                   |
+| `--gtb-tab-bg`                   | _transparent_                   | The background color of the tab item.              |
+| `--gtb-tab-bg-hover`             | _var(--gtb-bg-hover)_           | The background color of the tab item on hover.     |
+| `--gtb-tab-bg-focus`             | _var(--gtb-bg-focus)_           | The background color of the tab item on focus.     |
+| `--gtb-tab-bg-active`            | _var(--gtb-bg-active)_          | The background color of the active tab item.       |
+| `--gtb-tab-border-t-width`       | _0_                             | The top border width of the tab item.              |
+| `--gtb-tab-border-t-style`       | _solid_                         | The top border style of the tab item.              |
+| `--gtb-tab-border-t-color`       | _var(--gtb-border-color)_       | The top border color of the tab item.              |
+| `--gtb-tab-border-r-width`       | _0_                             | The right border width of the tab item.            |
+| `--gtb-tab-border-r-style`       | _solid_                         | The right border style of the tab item.            |
+| `--gtb-tab-border-r-color`       | _var(--gtb-border-color)_       | The right border color of the tab item.            |
+| `--gtb-tab-border-b-width`       | _0_                             | The bottom border width of the tab item.           |
+| `--gtb-tab-border-b-style`       | _solid_                         | The bottom border style of the tab item.           |
+| `--gtb-tab-border-b-color`       | _var(--gtb-border-color)_       | The bottom border color of the tab item.           |
+| `--gtb-tab-border-l-width`       | _0_                             | The left border width of the tab item.             |
+| `--gtb-tab-border-l-style`       | _solid_                         | The left border style of the tab item.             |
+| `--gtb-tab-border-l-color`       | _var(--gtb-border-color)_       | The left border color of the tab item.             |
+| `--gtb-tab-border-t-color-hover` | _var(--gtb-tab-border-t-color)_ | The top border color of the tab item on hover.     |
+| `--gtb-tab-border-r-color-hover` | _var(--gtb-tab-border-r-color)_ | The right border color of the tab item on hover.   |
+| `--gtb-tab-border-b-color-hover` | _var(--gtb-tab-border-b-color)_ | The bottom border color of the tab item on hover.  |
+| `--gtb-tab-border-l-color-hover` | _var(--gtb-tab-border-l-color)_ | The left border color of the tab item on hover.    |
+| `--gtb-tab-border-tl-radius`     | _0_                             | The top-left border radius of the tab item.        |
+| `--gtb-tab-border-tr-radius`     | _0_                             | The top-right border radius of the tab item.       |
+| `--gtb-tab-border-bl-radius`     | _0_                             | The bottom-left border radius of the tab item.     |
+| `--gtb-tab-border-br-radius`     | _0_                             | The bottom-right border radius of the tab item.    |
+| `--gtb-tab-ring-width`           | _0_                             | The width of the tab item's focus ring.            |
+| `--gtb-tab-ring-style`           | _solid_                         | The style of the tab item's focus ring.            |
+| `--gtb-tab-ring-color`           | _var(--gtb-base-light)_         | The color of the tab item's focus ring.            |
+| `--gtb-tab-ring-offset`          | _0.125rem_                      | The offset of the tab item's focus ring.           |
+| `--gtb-tab-icon-gap-x`           | _0.3em_                         | The row gap between the icon and the tab label.    |
+| `--gtb-tab-icon-gap-y`           | _0.3em_                         | The column gap between the icon and the tab label. |
+| `--gtb-tab-icon-alignment`       | _row_                           | The layout direction of the icon and tab label.    |
 
 ## TabPanel
 

@@ -86,10 +86,11 @@ templ TabberHeadlessCss() {
 
       button {
         display: flex;
+        flex-direction: var(--gtb-tab-icon-alignment);
         position: relative;
         justify-content: center;
         align-items: center;
-        gap: 0.3em;
+        gap: var(--gtb-tab-icon-gap-x) var(--gtb-tab-icon-gap-y);
         transition: background 0.8s;
         cursor: pointer;
         margin: 0;
