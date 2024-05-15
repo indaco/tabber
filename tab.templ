@@ -30,9 +30,9 @@ templ renderTab(value int, label string, icon *TabIcon) {
 		aria-controls={ makePanelId(value) }
 		tabindex="-1"
 	>
-		if icon.value != "" {
-			<span class={ gtb_tab_icon(icon.size) }>
-				@templ.Raw(icon.value)
+		if icon.Value != "" {
+			<span class={ gtb_tab_icon(icon.Size) }>
+				@templ.Raw(icon.Value)
 			</span>
 		}
 		{ label }

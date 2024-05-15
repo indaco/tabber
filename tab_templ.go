@@ -108,8 +108,8 @@ func renderTab(value int, label string, icon *TabIcon) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		if icon.value != "" {
-			var templ_7745c5c3_Var6 = []any{gtb_tab_icon(icon.size)}
+		if icon.Value != "" {
+			var templ_7745c5c3_Var6 = []any{gtb_tab_icon(icon.Size)}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var6...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
@@ -131,7 +131,7 @@ func renderTab(value int, label string, icon *TabIcon) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.Raw(icon.value).Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = templ.Raw(icon.Value).Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

@@ -33,10 +33,13 @@ func (s Size) String() string {
 }
 
 type TabIcon struct {
-	value string
-	size  float32
+	Value string
+	Size  float32
 }
 
 func Icon(v string) *TabIcon {
-	return &TabIcon{value: v, size: 1.25}
+	return &TabIcon{
+		Value: v,
+		Size:  1.25,
+	}
 }
