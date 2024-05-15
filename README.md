@@ -135,7 +135,7 @@ You can also define and use your own variant. Please, refer to [Create Your Own 
 In your `templ` file, defines the structure for the tab component.
 
 > [!IMPORTANT]
-> It is crucial to ensure that the value passed to `tabber.Root` **matches** the one used when adding the `gropdownConfig` to the `configMap` as per step above. This ensures that multiple tabs on the same page function independently.
+> It is crucial to ensure that the value passed to `tabber.Root` **matches** the one used when adding the `tabberConfig` to the `configMap` as per step above. This ensures that multiple tabs on the same page function independently.
 
 ```go
 const (
