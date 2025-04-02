@@ -33,24 +33,23 @@
   <a href="#contributing">Contributing</a>
 </p>
 
-A fully accessible, configurable and themeable server-rendered Tab component for Go web applications. Built with [templ](https://github.com/a-h/templ) library for seamless integration with Go-based web frontends.
-
-## Features
-
-- **No External Dependencies**: Built with native Go and the `templ` library, `tabber` requires no external CSS or JavaScript dependencies.
-- **Accessibility**: Compliant with the [WAI-ARIA Tabs Design Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/), `tabber` ensures accessibility for all users, with proper use of ARIA attributes and keyboard navigation support.
-- **Headless Component**: `tabber` comes as a headless component, providing flexible styling options that can be easily customized to suit your design needs.
-- **Pre-defined variants**: Choose from predefined variants or define your own custom themes to match your application's style. **Users can create their own tabber style variant as a re-usable templ component and use it.**
-- **Responsive Design**: Built with responsiveness in mind, `tabber` adjusts seamlessly to different screen sizes and devices, ensuring a consistent user experience across platforms.
-- **Multiple Variants**: `tabber` allows for enabling multiple variants on the same page, providing versatility and adaptability to diverse design requirements.
-- **Multiple tabs**: multiple `tabber` components on the same page, each with its own style.
-- **Customizable Configuration**: `tabber` offers various configuration options, including positioning, alignment, and more, allowing you to tailor its behavior to fit your specific use case.
-- **Auto-generated or User-defined Dark Mode**: Dark mode can be automatically generated based on the primary color defined or set by the user.
-- **Themeable with CSS Variables**: Easily customize the appearance of `tabber` using CSS variables, with built-in support for theming.
+A fully accessible, themeable, and server-rendered Tab component for Go web applications. Built with the [templ](https://github.com/a-h/templ) library for seamless integration into Go-based frontends.
 
 ![tabber](https://raw.githubusercontent.com/indaco/gh-assets/main/tabber/demo.gif)
 
 > **Disclaimer**: Please note that the demo video may not include the latest features and updates of the project. However, it still accurately represents the overall concepts and functionality.
+
+## Features
+
+- **Zero Dependencies**: No external CSS or JavaScript required — built entirely with Go and `templ`.
+- **Accessible by Design**: Fully compliant with the [WAI-ARIA Tabs Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/), including proper ARIA roles and keyboard navigation.
+- **Headless Component**: Offers full control over styling — bring your own design system or customize with CSS.
+- **Flexible Variants**: Use built-in variants or create your own reusable `tabber` styles as `templ` components.
+- **Responsive**: Adapts gracefully to different screen sizes and layouts.
+- **Multiple Instances**: Supports rendering multiple `tabber` components on the same page, each with distinct configuration and styling.
+- **Highly Configurable**: Customize alignment, positioning, and other behaviors to suit your app’s needs.
+- **Dark Mode Support**: Enable automatic dark mode based on the primary color or define a custom dark theme.
+- **CSS Variable Theming**: Easily theme components via CSS custom properties for consistent styling.
 
 ## Installation
 
