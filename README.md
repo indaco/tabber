@@ -48,7 +48,7 @@ A fully accessible, configurable and themeable server-rendered Tab component for
 - **Auto-generated or User-defined Dark Mode**: Dark mode can be automatically generated based on the primary color defined or set by the user.
 - **Themeable with CSS Variables**: Easily customize the appearance of `tabber` using CSS variables, with built-in support for theming.
 
-![Demo](statics/demo.gif)
+![tabber](https://raw.githubusercontent.com/indaco/gh-assets/main/tabber/demo.gif)
 
 > **Disclaimer**: Please note that the demo video may not include the latest features and updates of the project. However, it still accurately represents the overall concepts and functionality.
 
